@@ -44,8 +44,8 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: poc-multicluster
-  annotations:
-    kubernetes.io/ingress.class: "gce"
+  # annotations:
+  #   kubernetes.io/ingress.class: "gce"
 spec:
   rules:
     - http:
