@@ -44,11 +44,13 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: poc-multicluster
-  # annotations:
+  annotations:
+    nginx.ingress.kubernetes.io/server-alias: ~^*\.poc-multicluster\.totvs\.dev$
   #   kubernetes.io/ingress.class: "gce"
 spec:
   rules:
-    - http:
+    - host: localhost
+      http:
         paths:
           - path: /
             pathType: Exact
