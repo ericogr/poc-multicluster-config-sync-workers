@@ -1,7 +1,7 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: poc-multicluster
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: poc-multicluster
 
 ---
 apiVersion: apps/v1
