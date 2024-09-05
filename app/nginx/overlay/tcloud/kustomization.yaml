@@ -6,3 +6,6 @@ namespace: poc-multicluster
 
 resources:
 - ../../base/
+
+pathStrategyMerge:
+- deployment.yaml
