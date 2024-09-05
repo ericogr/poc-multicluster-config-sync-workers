@@ -5,4 +5,4 @@ metadata:
   name: nginx-deployment
   namespace: poc-multicluster
 spec:
-  replicas: 2
+  replicas: 4
