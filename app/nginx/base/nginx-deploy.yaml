@@ -49,8 +49,7 @@ metadata:
   #   kubernetes.io/ingress.class: "gce"
 spec:
   rules:
-    - host: localhost
-      http:
+    - http:
         paths:
           - path: /
             pathType: Exact
