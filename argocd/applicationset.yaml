@@ -24,7 +24,7 @@ spec:
         server: '{{.url}}'
       project: poc-multicluster
       source:
-        path: app/nginx/overlay/{{.cluster}}
+        path: app/**/overlay/{{.cluster}}
         repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
         targetRevision: main
       syncPolicy:

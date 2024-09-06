@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-alt
+  namespace: poc-multicluster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-alt
+  template:
+    metadata:
+      labels:
+        app: nginx-alt
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
