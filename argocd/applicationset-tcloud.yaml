@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  annotations:
+  name: poc-multicluster-nginx
+  namespace: argo-cd
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: tcloud
+            url: https://kubernetes.default.svc
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+  template:
+    metadata:
+      name: 'poc-multicluster-nginx-{{.cluster}}'
+    spec:
+      destination:
+        namespace: poc-multicluster
+        server: '{{.url}}'
+      project: poc-multicluster
+      sources:
+        - repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
+          path: app/nginx/overlay/{{.cluster}}
+          targetRevision: main
+        - repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
+          path: app/nginx-alt/overlay/{{.cluster}}
+          targetRevision: main
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

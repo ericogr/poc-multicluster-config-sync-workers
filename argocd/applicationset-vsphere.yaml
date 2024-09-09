@@ -10,8 +10,6 @@ spec:
         elements:
           - cluster: vsphere
             url: https://kubernetes.default.svc
-          - cluster: tcloud
-            url: https://189.126.139.92:6444
   goTemplate: true
   goTemplateOptions:
     - missingkey=error
