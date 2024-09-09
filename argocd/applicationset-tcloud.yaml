@@ -1,7 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  annotations:
   name: poc-multicluster-nginx
   namespace: argo-cd
 spec:
