@@ -23,10 +23,13 @@ spec:
         namespace: poc-multicluster
         server: '{{.url}}'
       project: poc-multicluster
-      source:
-        path: app/**/overlay/{{.cluster}}
-        repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
-        targetRevision: main
+      sources:
+        - repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
+          path: app/nginx/overlay/{{.cluster}}
+          targetRevision: main
+        - repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
+          path: app/nginx-alt/overlay/{{.cluster}}
+          targetRevision: main
       syncPolicy:
         automated:
           prune: false
