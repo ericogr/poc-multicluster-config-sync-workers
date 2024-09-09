@@ -7,5 +7,5 @@ namespace: poc-multicluster
 resources:
 - ../../base/
 
-patches:
-  - path: deployment.yaml
+# patches:
+#   - path: deployment.yaml
