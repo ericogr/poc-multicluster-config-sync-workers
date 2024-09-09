@@ -5,7 +5,7 @@ metadata:
   name: nginx-deployment-alt
   namespace: poc-multicluster
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx-alt
