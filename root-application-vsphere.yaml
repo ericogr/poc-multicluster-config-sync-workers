@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: all-apps
+  namespace: argo-cd
+spec:
+  project: poc-multicluster
+  source:
+    repoURL: https://github.com/ericogr/poc-multicluster-config-sync-workers.git
+    targetRevision: HEAD
+    path: appsets/vsphere
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-cd
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true  
+    automated: 
+      prune: true 
+      selfHeal: true
