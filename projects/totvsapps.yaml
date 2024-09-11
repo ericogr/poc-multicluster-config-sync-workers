@@ -11,6 +11,9 @@ spec:
     - name: 'totvsapps'
       namespace: 'totvsapp-system'
       server: 'https://kubernetes.default.svc'
+    - name: 'argo-cd'
+      namespace: 'argo-cd'
+      server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'

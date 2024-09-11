@@ -11,6 +11,9 @@ spec:
     - name: 'poc-multicluster'
       namespace: 'poc-multicluster'
       server: 'https://kubernetes.default.svc'
+    - name: 'argo-cd'
+      namespace: 'argo-cd'
+      server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
