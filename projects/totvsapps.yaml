@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: totvsapps
+  namespace: argo-cd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - name: 'totvsapps'
+      namespace: 'totvsapp-system'
+      server: 'https://kubernetes.default.svc'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - 'https://github.com/ericogr/poc-multicluster-config-sync-workers.git'

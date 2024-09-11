@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: poc-multicluster
+  namespace: argo-cd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - name: 'poc-multicluster'
+      namespace: 'poc-multicluster'
+      server: 'https://kubernetes.default.svc'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - 'https://github.com/ericogr/poc-multicluster-config-sync-workers.git'
